@@ -5,6 +5,7 @@ import sys
 from handlers import router
 from middlewares.throttling import ThrottlingMiddleware
 from utils.notify_admins import on_startup_notify, on_shutdown_notify
+from utils.create_database import on_startup_db, on_shutdown_db
 from utils.set_bot_commands import set_default_commands
 from utils.misc.logging import setup_logger
 
@@ -28,6 +29,7 @@ async def main():
     # Startup
     await set_default_commands(bot)
     await on_startup_notify(bot)
+    await on_startup_db()
     
     # Polling
     try:
@@ -40,6 +42,7 @@ async def main():
     finally:
         # Shutdown
         await on_shutdown_notify(bot)
+        await on_shutdown_db()
         await bot.session.close()
         logger.info("Bot to'xtatildi")
 
