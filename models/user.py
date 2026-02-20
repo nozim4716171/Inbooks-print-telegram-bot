@@ -25,7 +25,7 @@ class User(Base):
     first_name: Mapped[str] = mapped_column(String(255), nullable=False)
     last_name: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     phone_number: Mapped[Optional[str]] = mapped_column(String(20), nullable=True)
-    language: Mapped[str] = mapped_column(String(10), nullable=False, default="uz")
+    language: Mapped[Optional[str]] = mapped_column(String(10), nullable=True)
     is_admin: Mapped[bool] = mapped_column(Boolean, default=False)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     is_blocked: Mapped[bool] = mapped_column(Boolean, default=False)
