@@ -9,7 +9,7 @@ from data.config import CHANNEL_USERNAME
 from database.orm import add_one, get_one, update_by_filter
 from models.user import User
 from states.registration import RegistrationState
-from utils.i18n import I18nMiddleware
+from middlewares.i18n import I18nMiddleware
 
 router = Router()
 

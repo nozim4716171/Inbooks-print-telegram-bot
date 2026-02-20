@@ -17,11 +17,11 @@ def main_menu_keyboard(i18n) -> ReplyKeyboardMarkup:
                 KeyboardButton(text=i18n("branches")),
             ],
             [
-                KeyboardButton(text=i18n("feedbacks")),
-            ],
-            [
                 KeyboardButton(text=i18n("contact_us")),
                 KeyboardButton(text=i18n("settings")),
+            ],
+            [
+                KeyboardButton(text=i18n("feedbacks")),
             ],
         ],
         resize_keyboard=True,
