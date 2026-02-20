@@ -28,7 +28,7 @@ class I18nMiddleware(BaseMiddleware):
     def get_text(self, lang: str, key: str, **kwargs) -> str:
         """ Kalitga mos matnni qaytaradi """
         return self.translations.get(lang, {}).get(
-            key, self.translations[self].get(key, key)
+            key, self.translations.get(self.default_lang, {}).get(key, key)
         )
     
     async def __call__(
@@ -37,7 +37,7 @@ class I18nMiddleware(BaseMiddleware):
         event: Message,
         data: Dict[str, Any]
     ) -> Any:
-        user = await get_one(User, event.from_user.id)
-        lang = user.language if user else self.default_lang
+        user = await get_one(User, telegram_id=event.from_user.id)
+        lang = user.language if user and user.language else self.default_lang
         data['i18n'] = lambda key: self.get_text(lang, key)
         return await handler(event, data)

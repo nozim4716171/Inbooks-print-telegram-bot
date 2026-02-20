@@ -4,6 +4,7 @@ import sys
 
 from handlers import router
 from middlewares.throttling import ThrottlingMiddleware
+from utils.i18n import I18nMiddleware
 from utils.notify_admins import on_startup_notify, on_shutdown_notify
 from utils.create_database import on_startup_db, on_shutdown_db
 from utils.set_bot_commands import set_default_commands
@@ -22,6 +23,7 @@ async def main():
     
     # Middlewarelar
     dp.message.middleware(ThrottlingMiddleware())
+    dp.message.middleware(I18nMiddleware())
     
     # Routerlar
     dp.include_router(router)
