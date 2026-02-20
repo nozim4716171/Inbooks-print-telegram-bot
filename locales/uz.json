@@ -1,3 +1,14 @@
 {
-    
+    "welcome": "Xush kelibsiz! 🎉  Inbooks print — professional kitob chop etish xizmati.  Quyidagi menyudan tanlang:",
+    "send_phone_number_text": "Ro'yxatdan o'tish uchun telefon raqamingizni yuboring 📱",
+    "send_phone_number": "📱 Telefon raqam yuborish",
+    "order": "📦 Buyurtma berish",
+    "prices": "💰 Narxlar",
+    "calculate_price": "🧮  Narxni hisoblash",
+    "my_orders": "📋 Mening buyurtmalarim",
+    "cart": "🛒 Savat",
+    "branches": "📍 Filiallar",
+    "feedbacks": "💬 Fikr bildirish",
+    "contact_us": "📞 Bog’lanish",
+    "settings": "⚙️ Sozlamalar"  
 }
